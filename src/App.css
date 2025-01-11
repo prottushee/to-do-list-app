@@ -1,0 +1,33 @@
+:root {
+    --primary-color: rgb(91, 19, 97); 
+    --primary-color-hover: #230a03; 
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0;
+    padding: 7.5px 10px;
+    border-radius: 0;
+}
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+}
+form .form-control{
+    border-radius: 0;
+    background: none;
+    border: solid 0.5px var(--primary-color);
+}
+form .form-control:focus{
+    background: none;
+    box-shadow: none;
+    border: solid 1px var(--primary-color);
+}
+.list-group-item{
+    border: none;
+    border-radius: 0;
+    background: none;
+}
