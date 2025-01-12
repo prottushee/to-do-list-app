@@ -14,7 +14,6 @@ const EditTodo = ({ editTodo, task }) => {
                 className="form-control"
                 type="text"
                 value={value}
-                placeholder="Update task"
                 onChange={(e) => setValue(e.target.value)}
             />
             <button type="submit" className="btn btn-primary">

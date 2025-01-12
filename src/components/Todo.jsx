@@ -19,13 +19,13 @@ const Todo = ({ task, toggleTodo, editTodo, deleteTodo }) => {
                 <div className="d-flex align-items-center">
                     <FontAwesomeIcon
                         icon={task.completed ? faCheckSquare : faSquare}
-                        className={`me-2 ${task.completed ? "text-white" : "text-white"}`}
+                        className= "me-2 text-white"
                         style={{ cursor: "pointer" }}
                         onClick={() => toggleTodo(task.id)}
                     />
                     <p
                         className={`m-0 ${
-                            task.completed ? "text-decoration-line-through text-white" : ""
+                            task.completed ? "text-decoration-line-through" : ""
                         }`}
                         style={{ cursor: "pointer" }}
                         onClick={() => toggleTodo(task.id)}
