@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 import EditTodo from "./EditTodo";
@@ -6,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 uuidv4();
 
 const TodoWrapper = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useLocalStorage('todos', []);
   const addTodo = (task) => {
     setTodos([
       ...todos,
@@ -19,12 +20,15 @@ const TodoWrapper = () => {
     ]);
   };
 
+
+
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+
   };
 
   const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
@@ -63,7 +67,7 @@ const TodoWrapper = () => {
           />
           Things To Do!
         </h1>
-
+        
         <TodoForm addTodo={addTodo} />
         
         <div style={{ background: "transparent", padding: "0" }}>
